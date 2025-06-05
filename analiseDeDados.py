@@ -2,6 +2,7 @@ import pandas as pd
 
 df = pd.read_csv(r"C:\\Users\\kevyn\\OneDrive\\Área de Trabalho\\Pandas\\PDA_Lista_Instituicoes_Ensino_Superior_do_Brasil_EMEC (1).csv")
 
+
 print(df)
 
 
