@@ -1,55 +1,10 @@
 import pandas as pd
+from funcoesNormativas import verificar_linhas_nulas,ler_esquema_original
 
 df = pd.read_csv(r"C:\\Users\\kevyn\\OneDrive\\Área de Trabalho\\Pandas\\PDA_Lista_Instituicoes_Ensino_Superior_do_Brasil_EMEC (1).csv")
 
-
-print(df)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(ler_esquema_original(df))
+#print(verificar_linhas_nulas(df))
 
 
 
