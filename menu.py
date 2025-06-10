@@ -11,10 +11,9 @@ def menu():
         print("2 - Listar instituições Extintas")
         print("3 - Listar instituições Em Atividade")
         print("4 - Contagem por estado (UF)")
-        print("5 - Maiores municípios em número de IES")
-        print("6 - Total por situação (Em Atividade, Extinta)")
-        print("7 - Buscar IES por sigla")
-        print("8 - Sair")
+        print("5 - Total por situação (Em Atividade, Extinta)")
+        print("6 - Buscar IES por sigla")
+        print("7 - Sair")
 
         opcao = input("Escolha uma opção: ")
 
@@ -27,24 +26,19 @@ def menu():
             print(df_tratado[df_tratado['SITUACAO_IES'] == 'Extinta'][['NOME_DA_IES', 'UF', 'MUNICIPIO']].head(10))
 
         elif opcao == "3":
-            print("\n Instituições ativas:\n")
+            print("\n Instituições Em Atividade:\n")
             print(df_tratado[df_tratado['SITUACAO_IES'] == 'Em Atividade'][['NOME_DA_IES', 'UF', 'MUNICIPIO']].head(10))
             
         elif opcao == "4":
-            print("\n Quantidade de IES por estado (UF) (excluindo 'NÃO INFORMADO'):\n")
+            print("\n Quantidade de IES por estado (UF) :\n")
             df_filtrado_uf = df_tratado[df_tratado['UF'] != 'NÃO INFORMADO']
             print(df_filtrado_uf['UF'].value_counts())
 
         elif opcao == "5":
-            print("\ Quantidade de Municipios Com instituições por Estado:\n")
-            df_filtrado_uf = df_tratado[df_tratado['MUNICIPIO'] != 'NÃO INFORMADO']
-            print(df_tratado['MUNICIPIO'].value_counts().head(10))
-
-        elif opcao == "6":
             print("\n Total por situação institucional:\n")
             print(df_tratado['SITUACAO_IES'].value_counts())
 
-        elif opcao == "7":
+        elif opcao == "6":
             sigla = input("Digite a sigla da instituição: ").strip().upper()
             resultado = df_tratado[df_tratado['SIGLA'] == sigla]
             if resultado.empty:
@@ -53,7 +47,7 @@ def menu():
                 print(f"\nInstituições com a sigla '{sigla}':\n")
                 print(resultado[['NOME_DA_IES', 'UF', 'MUNICIPIO']])
 
-        elif opcao == "8":
+        elif opcao == "7":
             print("Saindo...")
             break
 
